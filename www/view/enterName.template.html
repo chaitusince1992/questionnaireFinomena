@@ -1,0 +1,11 @@
+<div class="every-page-container category-container" ng-init="init()">
+    <div class="application-header">
+<!--        <img class="backbutton-icon" src="img/backbutton.png" />-->
+        <div class="page-heading">Enter the name</div>
+    </div>
+    <div class="application-detail">
+        <div class="category-list-array">
+            <div class="category-list-item" ng-repeat="category in categories" ng-click="clickedOnCategory(category)">{{category.categoryName}}</div>
+        </div>
+    </div>
+</div>
