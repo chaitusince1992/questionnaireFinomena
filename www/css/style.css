@@ -4,6 +4,10 @@ body {
     margin: 0;
     font-family: cursive;
     min-width: 220px;
+    position: relative;
+}
+body * {
+    font-family: cursive;
 }
 .application-header {
     color: white;
@@ -24,4 +28,48 @@ img.backbutton-icon {
     display: inline-block;
     vertical-align: top;
     padding: 0 20px;
+}
+.application-detail {
+    position: absolute;
+    top: 113px;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background: #535e7d;
+    text-align: center;
+}
+.application-page-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+input.user-name-detail {
+    border: 0;
+    width: 320px;
+    height: 50px;
+    padding: 15px;
+    margin: 50px 30px;
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    text-align: center;
+    color: #848484;
+}
+input.go-forward {
+    display: inline-block;
+    width: 40px;
+    transform: scale(-1);
+    background: #4aa245;
+    padding: 20px;
+    border-radius: 40px;
+    vertical-align: middle;
+}
+.another-svg-image {
+    position: absolute;
+/*
+    top: 50%;
+    left: 50%;
+*/
 }

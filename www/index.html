@@ -14,7 +14,7 @@
 <body ng-app="questionApp">
     <!--main view-->
     <div ui-view class="question-app-container"></div>
-    
+
     <!--**********************   libraries   ************************-->
     <script type="text/javascript" src="js/lib/jquery/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
@@ -37,6 +37,14 @@
 
     <!-- *******************    directives   ************************** -->
     <script type="text/javascript" src="js/directives/common.directive.js"></script>
+    <script>
+        $("body").css("width",$(window).width());
+        $("body").css("height",$(window).height());
+        $(window).resize(function() {
+            $("body").css("width",$(window).width());
+            $("body").css("height",$(window).height());
+        });
+    </script>
 </body>
 
 </html>
