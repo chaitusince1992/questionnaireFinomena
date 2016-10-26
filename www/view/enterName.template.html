@@ -1,4 +1,4 @@
-<div class="every-page-container category-container" ng-init="init()">
+<div class="every-page-container enter-name-container" ng-init="init()">
     <div class="application-header">
 <!--        <img class="backbutton-icon" src="img/backbutton.png" />-->
         <div class="page-heading">Enter the name</div>
@@ -8,16 +8,9 @@
 <!--        <form class="application-page-wrap" ng-submit="submitUserName()">-->
             <input class="user-name-detail" type="text" name="User Name" placeholder="Enter your name" ng-model="userName" />
             <div style="display:inline-block;position:relative">
-                <input type="image" class="go-forward" src="img/backbutton.png" type='submit' ng-click="submitButtonForAnimation($event)" />
+                <input type="image" class="go-forward" src="img/backbutton.png" type='submit' ng-click="submitButtonForAnimation($event)" href="#questions" />
                 <div class="another-svg-image">
                 </div>
-                
-                    <div class="svg-2-div" style="width:100px;height:100px">
-                        <div class="inner-cercle"></div>
-                    </div>
-                    <svg class="svg-2" width="0" height="0">
-                        <circle cx="50%" cy="50%" r="40%" stroke="red" stroke-width="10" fill="transparent" />
-                    </svg>
             </div>
         </form>
     </div>

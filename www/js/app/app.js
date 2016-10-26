@@ -1,1 +1,1 @@
-var mainApp = angular.module('questionApp', ['ui.router']);
+var questionApp = angular.module('questionApp', ['ngRoute','ngAnimate']);

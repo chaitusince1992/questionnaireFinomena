@@ -1,12 +1,18 @@
-mainApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/enterName');
-    $stateProvider
-        .state('enterName', {
-            url: '/enterName',
+questionApp.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+        .when('/enterName', {
             templateUrl: 'view/enterName.template.html',
             controller: 'enterNameController'
         })
-        .state("otherwise", {
+        .when('/', {
+            templateUrl: 'view/enterName.template.html',
+            controller: 'enterNameController'
+        })
+        .when('/questions/:questionNo', {
+            templateUrl: 'view/questions.template.html',
+            controller: 'questionsController'
+        })
+        .otherwise("/", {
             url: '/enterName'
         })
 }]);

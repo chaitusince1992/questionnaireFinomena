@@ -6,8 +6,15 @@ body {
     min-width: 220px;
     position: relative;
 }
-body * {
+body* {
     font-family: cursive;
+}
+.question-app-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
 }
 .application-header {
     color: white;
@@ -35,7 +42,7 @@ img.backbutton-icon {
     left: 0;
     width: 100%;
     bottom: 0;
-    background: #535e7d;
+    background: #FFFFFF;
     text-align: center;
 }
 .application-page-wrap {
@@ -45,7 +52,7 @@ img.backbutton-icon {
     transform: translate(-50%,-50%);
 }
 input.user-name-detail {
-    border: 0;
+    border: 2px solid #4aa245;
     width: 320px;
     height: 50px;
     padding: 15px;
@@ -73,3 +80,47 @@ input.go-forward {
     left: 50%;
 */
 }
+
+
+
+.questions-page-container {
+    margin: 50px auto;
+    color: white;
+    font-size: 1.4em;
+    width: 80%;
+    text-align: left;
+}
+.question-text {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: black;
+}
+.options-each {
+    margin: 10px 25px;
+    padding: 10px 25px;
+    display: inline-block;
+    background: #5aab39;
+    background: #00adff;
+    border-radius: 5px;
+}
+input.option-radio-button {
+    width: 30px;
+    height: 30px;
+    vertical-align: bottom;
+}
+
+
+
+
+
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+.ng-enter        { animation:slideInRight 0.5s both ease-in; }
+.ng-leave        { animation: slideOutLeft 0.5s both ease-in;}
