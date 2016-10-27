@@ -47,6 +47,29 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
             console.log(data);
         });
     };
+    self.selectAll = function() {
+        var deferred = $q.defer();
+        self.db().transaction(function(tx) {
+            console.log(tx);
+            tx.executeSql('SELECT * FROM questions', [],function(tx, res) {
+                console.log(res);
+                var dataFromSQLLite = new Array();
+                var i = 0;
+                while (i < res.rows.length) {
+                    dataFromSQLLite[i] = res.rows.item(i);
+                    i++;
+                }
+                console.log(dataFromSQLLite);
+                deferred.resolve(dataFromSQLLite);
+            },function(error) {
+                console.log(error); 
+                deferred.reject(error);
+            });
+        },function(err) {
+        },function(res) {
+        });        
+        return deferred.promise;
+    };
     self.selectRowsQuery = function(id) {
         var deferred = $q.defer();
         self.db().transaction(function(tx) {

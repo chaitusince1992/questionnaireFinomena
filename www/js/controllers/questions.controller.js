@@ -17,6 +17,19 @@ questionApp.controller('questionsController', ['$scope', '$routeParams', '$filte
         self.goBack = function () {
             history.back();
         };
+        self.checkForLastAnswer = function(givenOption, optionId) {
+            console.log(givenOption, optionId);
+            if(givenOption == '') {
+                return '';
+            } else {
+                var optionsToBind = givenOption.split(',');
+                if(givenOption.split(',').indexOf(String(optionId)) == -1) {
+                    return '';
+                } else {
+                    return '#4cdc4c';
+                }
+            }
+        };
         self.clickedOnOption = function ($event, option) {
             //            console.log($event);
             console.log($event.currentTarget.children[1].children[0].checked);
@@ -80,6 +93,7 @@ questionApp.controller('questionsController', ['$scope', '$routeParams', '$filte
                 $location.path("questions/" + goTo);
             } else {
                 console.log("go to result");
+                $location.path("result");
             }
         };
     }

@@ -1,0 +1,12 @@
+<div class="every-page-container questions-container" ng-init="init()">
+    <div class="application-header">
+        <img class="backbutton-icon" src="img/backbutton.png" ng-click="goBack()" />
+        <div class="page-heading">Answer The Questions</div>
+    </div>
+    <div class="application-detail">
+        <div class="result-graph-container">
+            <span class="result-each" ng-style="{'width':correctWidth,'background':'green'}"></span>
+            <span class="result-each" ng-style="{'width':wrongWidth,'background':'red'}"></span>
+        </div>
+    </div>
+</div>

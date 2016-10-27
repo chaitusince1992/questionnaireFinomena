@@ -7,7 +7,7 @@
         <div class="questions-page-container">
             <div class="question-text">{{questionInformation.questionText}}</div>
             <div class="options-container">
-                <div class="options-each" ng-repeat="option in questionInformation.options" ng-click="clickedOnOption($event, option)">
+                <div class="options-each" ng-repeat="option in questionInformation.options" ng-click="clickedOnOption($event, option)" ng-style="{'background':checkForLastAnswer(questionInformation.givenOption, option.id)}">
                     <div class="ball-ripple"></div>
                     <div class="option-block">
                         <input class="option-radio-button" type="checkbox" name="options" />

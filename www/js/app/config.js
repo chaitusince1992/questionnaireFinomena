@@ -12,6 +12,10 @@ questionApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'view/questions.template.html',
             controller: 'questionsController'
         })
+        .when('/result', {
+            templateUrl: 'view/result.template.html',
+            controller: 'resultController'
+        })
         .when('/answers/:questionNo', {
             templateUrl: 'view/answers.template.html',
             controller: 'answersController'
