@@ -26,11 +26,12 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
     self.insertRowsQuery = function() {
         self.db().transaction(function(tx) {
             console.log(tx);
-            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [1,'When does india on the world cup','2008','2009','2010','2011','1,2,4','']);
-            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [2,'Author of who will cry when you die?','2008','2009','2010','2011','1,2','']);
-            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [3,'Who won the silver medal in last olympics?','2008','2009','2010','2011','3,4','']);
-            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [4,'Who is Krishna?','2008','2009','2010','2011','1','']);
-            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [5,'Who is Chiranjeevi?','2008','2009','2010','2011','2','']);
+            var insertHead = "INSERT OR REPLACE INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)"
+            tx.executeSql(insertHead, [1,'When did india won the world cup?','2007','2008','2010','2011','1,4','']);
+            tx.executeSql(insertHead, [2,'Author of "Who will cry when you die?"','Rahul Sharma','Robin Sharma','Rohit Sharma','Abhishek Sharma','2','']);
+            tx.executeSql(insertHead, [3,'Who won the silver medal in 2016 olympics for India?','P.V.Sindhu','Dipa Karmakar','Sakshi Malik','Pullela Gopichand','1','']);
+            tx.executeSql(insertHead, [4,'Why did Kattappa killed Baahubali?','Kattappa hates Baahubali','Baahubali loved Devasena','Baallaladeva told Kattappa to do so','Hypothetical question!','4','']);
+            tx.executeSql(insertHead, [5,'Why are you answering these questions?','To check my knowledge','To assess your knowledge','To recruit','To have fun','3','']);
         },function(data) {
             console.log(data);
         },function(data) {

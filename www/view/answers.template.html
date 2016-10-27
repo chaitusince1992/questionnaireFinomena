@@ -5,7 +5,7 @@
     </div>
     <div class="application-detail">
         <div class="questions-page-container">
-            <div class="question-text">{{questionInformation.questionText}}</div>
+            <div class="question-text">{{questionInformation.srNo}}. {{questionInformation.questionText}}</div>
             <div class="options-container">
                 <div class="options-each" ng-repeat="option in questionInformation.options" ng-style="{'background-color':correctOrWrongColor(questionInformation, option)}">
                     <div class="option-block">

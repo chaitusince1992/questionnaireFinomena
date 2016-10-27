@@ -51,6 +51,9 @@ img.backbutton-icon {
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.instructions {
+    font-size: 23px;
+}
 input.user-name-detail {
     border: 2px solid #4aa245;
     width: 320px;
@@ -154,10 +157,48 @@ input.option-radio-button {
     margin: 0 20px;
 }
 
+.result-graph-container {
+    width: 70%;
+    height: 70px;
+    margin: 50px auto;
+    text-align: left;
+}
 
+.result-each {
+    display: inline-block;
+    margin-right: -5px;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+.legend-block {
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    background: red;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+.legend-each {
+    display: inline-block;
+    margin: 0 40px 0 0;
+    vertical-align: middle;
+}
 
-
-
+a.go-to-answers {
+    text-decoration: none;
+    color: white;
+    background: grey;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #4c4c4c;
+    display: inline-block;
+    margin: 60px;
+}
+.thankyou-container.ng-binding {
+    font-size: 50px;
+    margin: 70px 0;
+}
 
 
 
@@ -174,7 +215,7 @@ input.option-radio-button {
     to      { transform: translateX(-100%); }
 }
 
-.ng-enter  { animation:slideInRight 0.5s both ease-in; }
-.ng-leave  { animation: slideOutLeft 0.5s both ease-in;}
+.ng-enter  { animation:slideInRight 0.5s both ease-in;}
+.ng-leave  { animation:slideOutLeft 0.5s both ease-in;}
 
 

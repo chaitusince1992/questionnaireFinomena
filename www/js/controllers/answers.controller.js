@@ -21,7 +21,8 @@ questionApp.controller('answersController', ['$scope', '$routeParams', '$sce', '
                 var goTo = Number(self.parameters.questionNo) + 1;
                 $location.path("answers/" + goTo);
             } else {
-                console.log("go to result");
+                console.log("go to result");3
+                $location.path("thankyou");
             }
         };
         self.correctOrWrongColor = function (info, option) {

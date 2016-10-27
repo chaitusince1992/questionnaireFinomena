@@ -20,6 +20,10 @@ questionApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'view/answers.template.html',
             controller: 'answersController'
         })
+        .when('/thankyou', {
+            templateUrl: 'view/thankyou.template.html',
+            controller: 'thankyouController'
+        })
         .otherwise("/", {
             url: '/enterName'
         })
