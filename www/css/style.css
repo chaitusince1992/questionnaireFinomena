@@ -102,6 +102,12 @@ input.go-forward {
     background: #5aab39;
     background: #00adff;
     border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-block {
+    position: relative;
 }
 input.option-radio-button {
     width: 30px;
@@ -124,3 +130,17 @@ input.option-radio-button {
 
 .ng-enter        { animation:slideInRight 0.5s both ease-in; }
 .ng-leave        { animation: slideOutLeft 0.5s both ease-in;}
+
+
+
+
+.ball-ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
+    background: white;
+    background: #22e4a7;
+    border-radius: 50%;
+}

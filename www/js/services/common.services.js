@@ -37,6 +37,16 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
             console.log(data);
         });
     };
+    self.insertAnswers = function(answer, srNo) {
+        self.db().transaction(function(tx) {
+            console.log(tx);
+            tx.executeSql("UPDATE questions SET givenOption = ? where srNo = ?", [answer, srNo]);
+        },function(data) {
+            console.log(data);
+        },function(data) {
+            console.log(data);
+        });
+    };
     self.selectRowsQuery = function(id) {
         var deferred = $q.defer();
         self.db().transaction(function(tx) {
@@ -60,5 +70,30 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
         });        
         return deferred.promise;
     };
-    
+    self.farmatOptionsData = function(data) {
+        var formatedData = new Object();
+        formatedData["srNo"] = data.srNo;
+        formatedData["questionText"] = data.questionText;
+        formatedData["correctOption"] = data.correctOption;
+        formatedData["givenOption"] = data.givenOption;
+        var optionsArray = new Array();
+        optionsArray.push({
+            id:1,
+            option:data.option1
+        });
+        optionsArray.push({
+            id:2,
+            option:data.option2
+        });
+        optionsArray.push({
+            id:3,
+            option:data.option3
+        });
+        optionsArray.push({
+            id:4,
+            option:data.option4
+        });
+        formatedData["options"] = optionsArray;
+        return formatedData;
+    }
 }]);
