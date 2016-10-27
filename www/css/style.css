@@ -82,7 +82,6 @@ input.go-forward {
 }
 
 
-
 .questions-page-container {
     margin: 50px auto;
     color: white;
@@ -108,6 +107,8 @@ input.go-forward {
 }
 .option-block {
     position: relative;
+    display: inline-block;
+    vertical-align: middle;
 }
 input.option-radio-button {
     width: 30px;
@@ -122,6 +123,45 @@ input.option-radio-button {
 }
 
 
+.ball-ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
+    background: #4cdc4c;
+    border-radius: 50%;
+}
+
+.next-end-question {
+    background: #52d6b2;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+.next-end-question img {
+    transform: scaleX(-1);
+    width: 30px;
+    vertical-align: middle;
+}
+
+.correct-option-or-not {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,28 +174,7 @@ input.option-radio-button {
     to      { transform: translateX(-100%); }
 }
 
-.ng-enter        { animation:slideInRight 0.5s both ease-in; }
-.ng-leave        { animation: slideOutLeft 0.5s both ease-in;}
+.ng-enter  { animation:slideInRight 0.5s both ease-in; }
+.ng-leave  { animation: slideOutLeft 0.5s both ease-in;}
 
 
-
-
-.ball-ripple {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0px;
-    height: 0px;
-    background: #4cdc4c;
-    border-radius: 50%;
-}
-
-.next-question {
-    background: #52d6b2;
-    position: absolute;
-    top: 3%;
-    right: 2%;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-}

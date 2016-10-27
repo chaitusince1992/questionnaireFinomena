@@ -11,8 +11,8 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
     self.preloadDataBase = function() {
         var deferred = $q.defer();
         self.db().transaction(function(tx) {
-            var queries = 'CREATE TABLE IF NOT EXISTS questions (srNo integer primary key, questionText varchar, option1 varchar, option2 varchar, option3 varchar, option4 varchar, correctOption integer, givenOption integer)';
-//            var queries = 'CREATE TABLE questions';
+            var queries = 'CREATE TABLE IF NOT EXISTS questions (srNo integer primary key, questionText varchar, option1 varchar, option2 varchar, option3 varchar, option4 varchar, correctOption varchar, givenOption varchar)';
+//            var queries = 'DROP TABLE questions';
             tx.executeSql(queries);
         }, function(error) {
             deferred.reject(error);
@@ -26,11 +26,11 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
     self.insertRowsQuery = function() {
         self.db().transaction(function(tx) {
             console.log(tx);
-            tx.executeSql("INSERT OR REPLACE INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [1,'When does india on the world cup','2008','2009','2010','2011',4,0]);
-            tx.executeSql("INSERT OR REPLACE INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [2,'Author of who will cry when you die?','2008','2009','2010','2011',4,1]);
-            tx.executeSql("INSERT OR REPLACE INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [3,'Who won the silver medal in last olympics?','2008','2009','2010','2011',4,2]);
-            tx.executeSql("INSERT OR REPLACE INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [4,'Who is Krishna?','2008','2009','2010','2011',4,3]);
-            tx.executeSql("INSERT OR REPLACE INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [5,'Who is Chiranjeevi?','2008','2009','2010','2011',4,4]);
+            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [1,'When does india on the world cup','2008','2009','2010','2011','1,2,4','']);
+            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [2,'Author of who will cry when you die?','2008','2009','2010','2011','1,2','']);
+            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [3,'Who won the silver medal in last olympics?','2008','2009','2010','2011','3,4','']);
+            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [4,'Who is Krishna?','2008','2009','2010','2011','1','']);
+            tx.executeSql("INSERT INTO questions(srNo, questionText, option1, option2, option3, option4, correctOption, givenOption) VALUES (?,?,?,?,?,?,?,?)", [5,'Who is Chiranjeevi?','2008','2009','2010','2011','2','']);
         },function(data) {
             console.log(data);
         },function(data) {
@@ -95,5 +95,5 @@ questionApp.service('commonServices', ['commonConstants','$q', function (commonC
         });
         formatedData["options"] = optionsArray;
         return formatedData;
-    }
+    };
 }]);
