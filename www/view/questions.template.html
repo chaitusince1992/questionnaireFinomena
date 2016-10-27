@@ -10,11 +10,14 @@
                 <div class="options-each" ng-repeat="option in questionInformation.options" ng-click="clickedOnOption($event, option.id)">
                     <div class="ball-ripple"></div>
                     <div class="option-block">
-<!--                        <input class="option-radio-button" type="radio" name="options" /> -->
-                        {{option.option}}
+                        <input class="option-radio-button" type="checkbox" name="options" />
+                        <div class="option-text">{{option.option}}</div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="next-question" ng-click="goToNextQuestionOrEndTest()">
+            Next
         </div>
     </div>
 </div>
