@@ -1,0 +1,14 @@
+{
+    "name": "nodewebsite",
+    "version": "0.0.1",
+    "description": "simple website",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Krishna Kotu",
+    "license": "ISC",
+    "dependencies": {
+        "mime": "~1.2.7"
+    }
+}

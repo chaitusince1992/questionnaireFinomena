@@ -1,9 +1,7 @@
-
 body {
     padding: 0;
     margin: 0;
     font-family: cursive;
-    min-width: 220px;
     position: relative;
 }
 body* {
@@ -21,7 +19,7 @@ body* {
     background: red;
     font-size: 1.5em;
     text-align: center;
-    padding: 40px 15px;
+    padding: 20px 20px;
     font-weight: bold;
     box-shadow: 0px 1px 10px grey;
 }
@@ -38,7 +36,7 @@ img.backbutton-icon {
 }
 .application-detail {
     position: absolute;
-    top: 113px;
+    top: 73px;
     left: 0;
     width: 100%;
     bottom: 0;
@@ -46,20 +44,18 @@ img.backbutton-icon {
     text-align: center;
 }
 .application-page-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin: 7% 0 0 0;
+    display: inline-block;
 }
 .instructions {
     font-size: 23px;
 }
 input.user-name-detail {
     border: 2px solid #4aa245;
-    width: 320px;
+    width: 80%;
     height: 50px;
     padding: 15px;
-    margin: 50px 30px;
+    margin: 50px 0px;
     font-size: 30px;
     display: inline-block;
     vertical-align: middle;
@@ -78,13 +74,11 @@ input.go-forward {
 }
 .another-svg-image {
     position: absolute;
-/*
+    /*
     top: 50%;
     left: 50%;
 */
 }
-
-
 .questions-page-container {
     margin: 50px auto;
     color: white;
@@ -124,8 +118,6 @@ input.option-radio-button {
     height: 100%;
     opacity: 0;
 }
-
-
 .ball-ripple {
     position: absolute;
     top: 0;
@@ -135,7 +127,6 @@ input.option-radio-button {
     background: #4cdc4c;
     border-radius: 50%;
 }
-
 .next-end-question {
     background: #52d6b2;
     position: absolute;
@@ -150,20 +141,17 @@ input.option-radio-button {
     width: 30px;
     vertical-align: middle;
 }
-
 .correct-option-or-not {
     display: inline-block;
     vertical-align: middle;
     margin: 0 20px;
 }
-
 .result-graph-container {
     width: 70%;
     height: 70px;
     margin: 50px auto;
     text-align: left;
 }
-
 .result-each {
     display: inline-block;
     margin-right: -5px;
@@ -184,7 +172,6 @@ input.option-radio-button {
     margin: 0 40px 0 0;
     vertical-align: middle;
 }
-
 a.go-to-answers {
     text-decoration: none;
     color: white;
@@ -199,23 +186,22 @@ a.go-to-answers {
     font-size: 50px;
     margin: 70px 0;
 }
-
-
-
-
-
-
-
 @keyframes slideInRight {
-    from    { transform:translateX(100%); }
-    to      { transform: translateX(0); }
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
-
 @keyframes slideOutLeft {
-    to      { transform: translateX(-100%); }
+    to {
+        transform: translateX(-100%);
+    }
 }
-
-.ng-enter  { animation:slideInRight 0.5s both ease-in;}
-.ng-leave  { animation:slideOutLeft 0.5s both ease-in;}
-
-
+.ng-enter {
+    animation: slideInRight 0.5s both ease-in;
+}
+.ng-leave {
+    animation: slideOutLeft 0.5s both ease-in;
+}
