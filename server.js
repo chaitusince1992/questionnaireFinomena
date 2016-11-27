@@ -36,13 +36,14 @@ function serverWorking(response, abspath) {
 }
 
 var server = http.createServer(function (request, response) {
+    response.setHeader('Access-Control-Allow-Origin', '*');
     var filePath = false;
     if (request.url == "/") {
         filePath = "index.html"
     } else {
         filePath = request.url
     }
-    
+
     var absPath = "./" + filePath;
     serverWorking(response, absPath);
 });
